@@ -1,5 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Projects } from "@/components/custom/projects"
+import { AchievementsCarousel } from "@/components/custom/achievements"
 import { useState } from "react"
+import { Button } from "@/components/ui/button"
 import {
   Select,
   SelectContent,
@@ -44,6 +47,8 @@ function Home() {
       <TabsContent value="2024">Change your password here.</TabsContent>
 
 </Tabs>
+<Projects />
+          <AchievementsCarousel />
   </ThemeProvider>
   )
 }
