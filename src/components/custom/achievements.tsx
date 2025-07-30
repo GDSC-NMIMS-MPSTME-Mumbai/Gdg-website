@@ -49,7 +49,7 @@ export function AchievementsCarousel() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-[500px] px-4 md:px-8 gap-8 md:gap-12 w-full">
+    <div className="flex flex-col md:flex-row items-center justify-center min-h-[500px] px-4 md:px-8 gap-8 md:gap-12 w-screen">
       {/* Title Section */}
       <div className="w-full md:w-2/3 text-center md:text-left">
         <motion.h2
