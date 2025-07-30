@@ -48,7 +48,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section className="w-full py-12 px-4">
+    <section className="w-screen py-12 px-4">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Projects</h1>
       </div>
@@ -60,7 +60,7 @@ export function Projects() {
             className="flex flex-col justify-between overflow-hidden rounded-2xl border hover:shadow-xl transition-shadow w-full max-w-xs mx-auto"
           >
             <img
-              src={project.image}
+              src={project.image}w
               alt={project.title}
               className="h-48 w-full object-cover"
             />
