@@ -24,8 +24,17 @@ const Navbar: React.FC = () => {
       >
         <div className="flex items-center gap-6">
           <div className="w-6 h-6 flex items-center justify-center text-[#94938D]">
+            {/* <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+            </svg>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
+            </svg> */}
+            <svg viewBox="0 0 100 50">
+              <path fill="none" stroke="red" stroke-width="6" transform="scale(1.1)"
+                    d="M10,25 C20,0 40,0 50,25 C60,50 80,50 90,25
+                      C80,0 60,0 50,25
+                      C40,50 20,50 10,25 Z" />
             </svg>
           </div>
           <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.2, ease: "easeInOut" }}>
@@ -50,9 +59,12 @@ const Navbar: React.FC = () => {
 
       <div className="lg:hidden flex items-center justify-between w-full px-4">
         <div className="w-6 h-6 flex items-center justify-center text-[#94938D]">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-          </svg>
+            <svg viewBox="0 0 100 50">
+              <path fill="none" stroke="red" stroke-width="6" transform="scale(1.1)"
+                    d="M10,25 C20,0 40,0 50,25 C60,50 80,50 90,25
+                      C80,0 60,0 50,25
+                      C40,50 20,50 10,25 Z" />
+            </svg>
         </div>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
