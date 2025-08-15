@@ -24,12 +24,6 @@ const Navbar: React.FC = () => {
       >
         <div className="flex items-center gap-6">
           <div className="w-6 h-6 flex items-center justify-center text-[#94938D]">
-            {/* <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-            </svg> */}
             <svg viewBox="0 0 100 50">
               <path fill="none" stroke="red" stroke-width="6" transform="scale(1.1)"
                     d="M10,25 C20,0 40,0 50,25 C60,50 80,50 90,25
