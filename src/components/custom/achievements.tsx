@@ -2,11 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const achievements = [
-  "🏆 Best Tech Club 2024",
-  "💡 100+ Active Contributors",
-  "📢 Hosted 15+ Workshops",
-  "🌍 Impacted 1000+ Students",
-  "🔗 Collaborated with 6 Companies"
+  "Best Tech Club 2024",
+  "100+ Active Contributors",
+  "Hosted 15+ Workshops",
+  "Impacted 1000+ Students",
+  "Collaborated with 6 Companies"
 ];
 
 export function AchievementsCarousel() {
@@ -23,7 +23,6 @@ export function AchievementsCarousel() {
     setCurrent((current - 1 + achievements.length) % achievements.length);
   };
 
-  // Animation variants for circular motion
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 200 : -200,
@@ -49,9 +48,8 @@ export function AchievementsCarousel() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-[500px] px-4 md:px-8 gap-8 md:gap-12 w-full">
-      {/* Title Section */}
-      <div className="w-full md:w-2/3 text-center md:text-left">
+    <div className="flex flex-col md:flex-row items-center justify-center min-h-[500px] px-4 md:px-8 gap-8 md:gap-12 w-screen">
+      <div className="w-screen md:w-2/3 text-center md:text-left">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,9 +68,7 @@ export function AchievementsCarousel() {
         </motion.p>
       </div>
 
-      {/* Carousel Section */}
       <div className="relative w-full md:w-2/3 h-[300px] flex items-center justify-center">
-        {/* Main Circle with Circular Motion */}
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={current}
@@ -110,7 +106,6 @@ export function AchievementsCarousel() {
           {achievements[(current - 1 + achievements.length) % achievements.length]}
         </motion.div>
 
-        {/* Minimal Peek Circles - Right */}
         <motion.div
           animate={{
             x: 80,
@@ -123,7 +118,6 @@ export function AchievementsCarousel() {
           {achievements[(current + 1) % achievements.length]}
         </motion.div>
 
-        {/* Navigation Arrows - Always Visible */}
         <button
           onClick={prev}
           className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-4xl text-blue-600 z-20 hover:text-blue-800 transition-colors"

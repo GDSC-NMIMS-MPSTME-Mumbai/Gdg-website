@@ -48,7 +48,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section className="w-full py-12 px-4">
+    <section className="w-screen py-12 px-4">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Projects</h1>
       </div>
