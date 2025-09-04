@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -116,5 +117,87 @@
   }
   body {
     @apply bg-background text-foreground;
+   
+  }
+}
+
+.serif{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sans-serif{
+  font-family: none;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+.scroll-snap-container {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;  
+  overscroll-behavior: none; 
+}
+
+.scroll-snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  min-height: 100vh;
+}
+
+ 
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+ 
+* {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+ 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+ 
+.prevent-layout-shift {
+  contain: layout style paint;
+}
+ 
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    animation-timeline: scroll();
+    animation-range: entry 0% cover 100%;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
