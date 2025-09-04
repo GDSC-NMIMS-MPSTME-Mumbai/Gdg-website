@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedText from "./AnimatedText";
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLinkClick = () => {
-    setIsMobileMenuOpen(false); 
+    setIsMobileMenuOpen(false);
   };
 
   return (
-    <nav className="w-full flex justify-center py-5 relative z-50"> 
+    <nav className="w-full flex justify-center py-5 relative z-50">
+      {/* Desktop Menu */}
       <div
         className="
           hidden lg:flex items-center gap-5 
@@ -20,46 +22,71 @@ const Navbar: React.FC = () => {
           px-3 py-2
           shadow-lg
           z-20
+          min-h-[48px]
         "
+        style={{ alignItems: 'center' }}
       >
-        <div className="flex items-center gap-6">
-          <div className="w-6 h-6 flex items-center justify-center text-[#94938D]">
+        <div className="flex items-center gap-6 h-full">
+          {/* Logo */}
+          <div className="w-6 h-6 flex items-center justify-center text-[#94938D] flex-shrink-0">
             <svg viewBox="0 0 100 50">
-              <path fill="none" stroke="red" stroke-width="6" transform="scale(1.1)"
-                    d="M10,25 C20,0 40,0 50,25 C60,50 80,50 90,25
-                      C80,0 60,0 50,25
-                      C40,50 20,50 10,25 Z" />
+              <path
+                fill="none"
+                stroke="red"
+                strokeWidth="6"
+                transform="scale(1.1)"
+                d="M10,25 C20,0 40,0 50,25 C60,50 80,50 90,25
+                   C80,0 60,0 50,25
+                   C40,50 20,50 10,25 Z"
+              />
             </svg>
           </div>
-          <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.2, ease: "easeInOut" }}>
-            <Link to="#" className="text-[#94938D] hover:text-white font-medium whitespace-nowrap">Team</Link>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.2, ease: "easeInOut" }}>
-            <Link to="#" className="text-[#94938D] hover:text-white font-medium whitespace-nowrap">Achievements</Link>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.2, ease: "easeInOut" }}>
-            <Link to="#" className="text-[#94938D] hover:text-white font-medium whitespace-nowrap">Projects</Link>
-          </motion.div>
+
+          {/* Links */}
+          {["Team", "Achievements", "Projects"].map((item) => (
+            <motion.div
+              key={item}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="flex items-center"
+            >
+              <Link
+                to="#"
+                className="text-[#94938D] hover:text-white font-medium whitespace-nowrap flex items-center"
+                style={{ lineHeight: 1 }}
+              >
+                <AnimatedText>{item}</AnimatedText>
+              </Link>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="flex items-center pl-5 border-l border-gray-700">
-          <Button
-            className="rounded-full"
-          >
-            Contact Us
+        {/* Contact Button */}
+        <div className="flex items-center pl-5 border-l border-gray-700 h-full">
+          <Button className="rounded-full flex items-center">
+            <AnimatedText>Contact Us</AnimatedText>
           </Button>
         </div>
       </div>
 
+      {/* Mobile Menu Toggle */}
       <div className="lg:hidden flex items-center justify-between w-full px-4">
+        {/* Logo */}
         <div className="w-6 h-6 flex items-center justify-center text-[#94938D]">
-            <svg viewBox="0 0 100 50">
-              <path fill="none" stroke="red" stroke-width="6" transform="scale(1.1)"
-                    d="M10,25 C20,0 40,0 50,25 C60,50 80,50 90,25
-                      C80,0 60,0 50,25
-                      C40,50 20,50 10,25 Z" />
-            </svg>
+          <svg viewBox="0 0 100 50">
+            <path
+              fill="none"
+              stroke="red"
+              strokeWidth="6"
+              transform="scale(1.1)"
+              d="M10,25 C20,0 40,0 50,25 C60,50 80,50 90,25
+                 C80,0 60,0 50,25
+                 C40,50 20,50 10,25 Z"
+            />
+          </svg>
         </div>
+
+        {/* Hamburger Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 text-white focus:outline-none"
@@ -72,20 +99,27 @@ const Navbar: React.FC = () => {
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
           </svg>
         </button>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ x: "100%" }} 
-            animate={{ x: 0 }}     
-            exit={{ x: "100%" }}  
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
             className="fixed inset-0 bg-[#202020] z-40 flex flex-col items-center justify-center lg:hidden"
           >
+            {/* Close Button */}
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               className="absolute top-6 right-6 p-2 text-white focus:outline-none"
@@ -98,45 +132,43 @@ const Navbar: React.FC = () => {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
+            {/* Links */}
             <nav className="flex flex-col space-y-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 200 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.3 }}
-              >
-                <Link to="#" className="text-white text-3xl" onClick={handleLinkClick}>Team</Link>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 200 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.3 }}
-              >
-                <Link to="#" className="text-white text-3xl" onClick={handleLinkClick}>Achievements</Link>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 200 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.3 }}
-              >
-                <Link to="#" className="text-white text-3xl" onClick={handleLinkClick}>Projects</Link>
-              </motion.div>
+              {["Team", "Achievements", "Projects"].map((item, index) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 200 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.2, duration: 0.3 }}
+                >
+                  <Link
+                    to="#"
+                    className="text-white text-3xl"
+                    onClick={handleLinkClick}
+                  >
+                    {item}
+                  </Link>
+                </motion.div>
+              ))}
             </nav>
 
+            {/* Contact Button */}
             <motion.div
               initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.3 }}
               className="mt-10"
             >
-              <Button
-              size={"lg"}
-                onClick={handleLinkClick}
-                className='rounded-xl'
-              >
+              <Button size="lg" onClick={handleLinkClick} className="rounded-xl">
                 Contact Us
               </Button>
             </motion.div>
