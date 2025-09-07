@@ -7,6 +7,14 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 const projects = [
   {
@@ -124,14 +132,47 @@ export function Projects() {
               </CardHeader>
               
               <CardFooter className="pt-0">
-                <Button 
-                  asChild 
-                  className="w-full transition-all duration-300"
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button  
+                  className="w-full transition-all duration-300 margin-top: 0.5rem"
+                  variant="outline"
                 >
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
                     View Project →
-                  </a>
                 </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle className="text-xl font-bold">{project.title}</DialogTitle>
+                      <DialogDescription>
+                        <div className="mt-2 text-sm leading-relaxed font-bold">
+                          {project.description}
+                        </div>
+                        <div>
+                          <img
+                            src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=1470&q=80"
+                            alt={project.title}
+                            className="mt-4 w-full h-64 object-cover rounded-lg"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="mt-4 font-semibold">Technologies Used:</h3>
+                          <ul className="list-disc list-inside">
+                            {project.tech.map((tech, techIndex) => (
+                              <li key={techIndex}>{tech}</li>
+                            ))}
+                          </ul>
+                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </div>
+                        <div className="p-4 pt-1">
+                          <Button className="w-full transition-all duration-300 mt-4">Learn More</Button>
+                        </div>
+                      </DialogDescription>
+                    </DialogHeader>
+
+                  </DialogContent>
+                </Dialog>
+                
               </CardFooter>
             </Card>
           </motion.div>
