@@ -166,7 +166,7 @@ void main() {
 `;
 
 const FRAGMENT_SRC = `
-precision highp float;
+precision mediump float;
 
 uniform vec3  uColor;
 uniform vec2  uResolution;
@@ -187,7 +187,7 @@ const int SHAPE_CIRCLE   = 1;
 const int SHAPE_TRIANGLE = 2;
 const int SHAPE_DIAMOND  = 3;
 
-const int   MAX_CLICKS = 10;
+const int   MAX_CLICKS = 3;
 
 uniform vec2  uClickPos  [MAX_CLICKS];
 uniform float uClickTimes[MAX_CLICKS];
@@ -201,7 +201,7 @@ float Bayer2(vec2 a) {
 #define Bayer4(a) (Bayer2(.5*(a))*0.25 + Bayer2(a))
 #define Bayer8(a) (Bayer4(.5*(a))*0.25 + Bayer2(a))
 
-#define FBM_OCTAVES     5
+#define FBM_OCTAVES     3
 #define FBM_LACUNARITY  1.25
 #define FBM_GAIN        1.0
 
