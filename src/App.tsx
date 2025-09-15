@@ -10,7 +10,6 @@ const App: React.FC = () => {
   return (
     <Router>
       <MouseFollower />
-      
       {/* Fixed navbar overlay - appears on all sections */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <Navbar />
