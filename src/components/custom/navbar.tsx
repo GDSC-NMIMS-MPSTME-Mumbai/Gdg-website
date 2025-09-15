@@ -43,19 +43,24 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Links */}
-          {["Team", "Achievements", "Projects"].map((item) => (
+          {[
+            { name: "Home", path: "/" },
+            { name: "Team", path: "/team" },
+            { name: "Achievements", path: "/achievements" },
+            { name: "Projects", path: "/projects" }
+          ].map((item) => (
             <motion.div
-              key={item}
+              key={item.name}
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
               className="flex items-center"
             >
               <Link
-                to="#"
+                to={item.path}
                 className="text-[#94938D] hover:text-white font-medium whitespace-nowrap flex items-center"
                 style={{ lineHeight: 1 }}
               >
-                <AnimatedText>{item}</AnimatedText>
+                <AnimatedText>{item.name}</AnimatedText>
               </Link>
             </motion.div>
           ))}
@@ -143,19 +148,24 @@ const Navbar: React.FC = () => {
 
             {/* Links */}
             <nav className="flex flex-col space-y-8 text-center">
-              {["Team", "Achievements", "Projects"].map((item, index) => (
+              {[
+                { name: "Home", path: "/" },
+                { name: "Team", path: "/team" },
+                { name: "Achievements", path: "/achievements" },
+                { name: "Projects", path: "/projects" }
+              ].map((item, index) => (
                 <motion.div
-                  key={item}
+                  key={item.name}
                   initial={{ opacity: 0, y: 200 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + index * 0.2, duration: 0.3 }}
                 >
                   <Link
-                    to="#"
+                    to={item.path}
                     className="text-white text-3xl"
                     onClick={handleLinkClick}
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </motion.div>
               ))}
