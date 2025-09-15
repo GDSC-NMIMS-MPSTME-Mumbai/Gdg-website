@@ -8,6 +8,6 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
   <ThemeProvider defaultTheme="dark">
     <App />
-    </ThemeProvider>
+  </ThemeProvider>
   </StrictMode>,
 )
