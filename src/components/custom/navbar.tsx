@@ -46,12 +46,12 @@ const Navbar: React.FC = () => {
           {[
             { name: "Home", path: "/" },
             { name: "Team", path: "/team" },
-            { name: "Achievements", path: "/achievements" },
-            { name: "Projects", path: "/projects" }
+            { name: "Projects", path: "/projects" },
+            { name: "Achievements", path: "/achievements" }
           ].map((item) => (
             <motion.div
               key={item.name}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1}}
               transition={{ duration: 0.2, ease: "easeInOut" }}
               className="flex items-center"
             >
