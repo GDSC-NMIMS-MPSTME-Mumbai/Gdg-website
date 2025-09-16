@@ -55,7 +55,6 @@ function Header() {
 
   return (
     <div ref={headerRef} className="relative w-full h-screen overflow-hidden">
-      {/* Only render PixelBlast when hero section is visible */}
       {isHeroVisible && (
         <div
           className="absolute inset-0 w-full h-full transition-all duration-3000 ease-in-out"
@@ -70,10 +69,9 @@ function Header() {
           <PixelBlast
             variant="circle"
             color="#4285F4"
-            // Performance optimization props (adjust these based on PixelBlast API)
-            pixelSize={2}           // Smaller particles
-            patternDensity={0.3}       // Fewer particles
-            speed={0.5}        // Slower animation
+            pixelSize={3}           
+            patternDensity={2}      
+            speed={0.9}        
           />
         </div>
       )}
