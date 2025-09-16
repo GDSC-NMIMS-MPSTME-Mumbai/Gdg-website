@@ -319,9 +319,7 @@ export function Team() {
                       transition-all duration-300 hover:scale-[1.02] text-white overflow-hidden">
         
         {/* Background gradient effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-cyan-500/0 
-                        group-hover:from-blue-500/10 group-hover:via-purple-500/5 group-hover:to-cyan-500/10 
-                        transition-all duration-500 rounded-xl"></div>
+        <div className="absolute inset-0 transition-all duration-500 rounded-xl"></div>
         
         {/* Content */}
         <div className="relative z-10">
@@ -399,7 +397,7 @@ export function Team() {
   return (
     <section className="min-h-screen snap-start snap-always bg-black relative overflow-hidden px-4 py-16">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
+      <div className="absolute inset-0 via-black to-gray-900"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] 
                       from-blue-900/20 via-transparent to-transparent"></div>
       
@@ -446,16 +444,16 @@ export function Team() {
                   <TabsList className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-2">
                     <TabsTrigger 
                       value="Tech" 
-                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 
-                               data-[state=active]:to-purple-600 data-[state=active]:text-white 
+                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 
+                               data-[state=active]:to-gray-600 data-[state=active]:text-white 
                                px-6 py-3 rounded-xl font-medium transition-all duration-300"
                     >
                       Technical Teams
                     </TabsTrigger>
                     <TabsTrigger 
                       value="Non-Tech" 
-                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-500 
-                               data-[state=active]:to-emerald-600 data-[state=active]:text-white 
+                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 
+                               data-[state=active]:to-gray-600 data-[state=active]:text-white 
                                px-6 py-3 rounded-xl font-medium transition-all duration-300"
                     >
                       Operations Teams
