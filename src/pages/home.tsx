@@ -61,12 +61,12 @@ function Home() {
                       <div className="space-y-4">
                         <p className="text-lg">Non-Technical Team Members</p>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                          <Button variant="outline">Marketing</Button>
-                          <Button variant="outline">Events</Button>
-                          <Button variant="outline">Content</Button>
-                          <Button variant="outline">Social Media</Button>
-                          <Button variant="outline">Operations</Button>
-                          <Button variant="outline">Finance</Button>
+                          <Button variant="outline">Bussiness development</Button>
+                          <Button variant="outline">Events ops</Button>
+                          <Button variant="outline">SMCW</Button>
+                          <Button variant="outline">Public relations</Button>
+                          <Button variant="outline">Digital creatives</Button>
+                          <Button variant="outline">Photography</Button>
                         </div>
                       </div>
                     </TabsContent>
