@@ -1,5 +1,5 @@
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 import {
   Dialog,
   DialogContent,
@@ -7,52 +7,37 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+} from "@/components/ui/dialog";
+import { motion } from "framer-motion";
 
 const projects = [
 	{
-		title: "DevConnect Platform",
-		description: "A comprehensive developer networking platform connecting coders worldwide",
+		title: "MPSTME OnTrack",
+		description: "Campus navigation tool for new students at MPSTME to aid in finding their way around campus",
 		image: "/devconnect.jpg",
 		link: "#",
-		tech: ["React", "Node.js", "MongoDB"]
+		tech: ["Flutter", "Node.js"],
+    longDescription: "New students always find it difficult to navigate around the MPSTME campus. Our project, MPSTME OnTrack, is a campus navigation tool designed to help new students find their way around campus easily. The tool provides an interactive map of the campus, highlighting key locations such as lecture halls, and administrative offices. Students can search for specific locations or get directions from their current location to their desired destination, making it a comprehensive resource for new students.",
+    private: false
 	},
-	{
-		title: "Smart Waste Sorter",
-		description: "AI-powered waste classification system for sustainable waste management",
-		image: "/waste-sorter.jpg",
-		link: "#",
-		tech: ["Python", "TensorFlow", "IoT"]
-	},
-	{
-		title: "AssistShoe",
-		description: "Smart footwear solution for visually impaired individuals",
-		image: "/assist-shoe.jpg",
-		link: "#",
-		tech: ["Arduino", "Sensors", "Mobile App"]
-	},
-	{
-		title: "GDSC Portfolio",
-		description: "Dynamic portfolio showcase for Google Developer Student Club",
-		image: "/gdsc-portfolio.jpg",
-		link: "#",
-		tech: ["React", "Tailwind", "Framer Motion"]
-	},
-	{
-		title: "EcoTracker",
-		description: "Environmental impact tracking application for sustainable living",
-		image: "/gdsc-portfolio.jpg",
-		link: "#",
-		tech: ["Flutter", "Firebase", "APIs"]
-	},
-	{
-		title: "CodeMentor AI",
-		description: "AI-powered coding assistant for learning and development",
-		image: "/gdsc-portfolio.jpg",
-		link: "#",
-		tech: ["Python", "OpenAI", "React"]
-	},
+  {
+    title: "Roast.io",
+    image: "/roastio.png",
+    link: "#",
+    tech: ["React", "Groq", "Python Flask"],
+    description: "Humorous roasts of a user's professional online presence using Groq to analyze GitHub and LinkedIn profiles.",
+    longDescription: "Roast.io is a full-stack web application designed to deliver humorous and sarcastic roasts of a user's professional online presence. The application uses Groq to analyze a person's GitHub and LinkedIn profiles and generates witty and observational commentary. ",
+    private: false
+  },
+  {
+    title: "Lab Experiment Solver",
+    image: "/labexp.png",
+    link: "#",
+    tech: ["Next.js", "Python Flask", "Tailwind CSS"],
+    description: "A web application that solves lab experiments by providing step-by-step guidance and solutions.",
+    longDescription: "The Lab Experiment Solver is a web application designed to assist students in solving lab experiments. The application provides step-by-step guidance and solutions for various lab experiments, making it easier for students to understand and complete their assignments. The app features a user-friendly interface, allowing students to easily navigate through different experiments and access the necessary information.",
+    private: true
+  }
 ];
 
 export function Projects() {
@@ -166,14 +151,16 @@ export function Projects() {
 																<li key={techIndex}>{tech}</li>
 															))}
 														</ul>
-														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+														{project.longDescription}
 													</div>
-													<div className="p-4 pt-1">
+                          {project.private == false ? (
+                            <div className="p-4 pt-1">
 														<a href="https://github.com" target="_blank">
 														<Button className="w-full transition-all duration-300 mt-4">
 															Learn More</Button>
 															</a>
 													</div>
+                          ): null}
 												</DialogDescription>
 											</DialogHeader>
 										</DialogContent>
