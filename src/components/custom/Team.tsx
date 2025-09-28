@@ -42,14 +42,15 @@ const teamData = {
           /*skills: ["React", "Node.js", "TypeScript"]*/
         },
         { 
-          name: "Ankur Pathare", 
-          year: "3nd Year - BTI", 
+          name: "Nathan Dsouza", 
+          year: "Unknown year", 
           position: "Sub-Head", 
           college: "MPSTME",
-          Image: "/core images/IMG-20250613-WA0007 - Ankur Pathare.jpg"
+          Image: "/core images/Nathan Dsouza.jpeg"
           
           /*skills: ["React", "Node.js", "TypeScript"]*/
         },
+        
       ],
       "Game Development": [
         { 
@@ -81,9 +82,49 @@ const teamData = {
           Image: "/core images/IMG_0085 - MANTEK SINGH BURN.jpeg"
           /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
-        
+        { 
+          name: "Vyom Shah", 
+          year: "Unknown year", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
+        },
+        { 
+          name: "Yohaan Guzdar", 
+          year: "Unknown year", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
+        },
+        { 
+          name: "Shreyas Tekawade", 
+          year: "Unknown year", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
+        },
       ],
+
       "AI & Machine Learning": [
+        { 
+          name: "Mudith Shetty", 
+          year: "5th Year - BTI", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/Mudith Shetty.jpg"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
+        },
+        { 
+          name: "Dhruv", 
+          year: "Unknown Year", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
+        },
         { 
           name: "Arth Agrawal", 
           year: "2nd Year - MBATech", 
@@ -92,16 +133,6 @@ const teamData = {
           /*Image: "/core images/"*/
           /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
-        { 
-          name: "Mudith Shetty", 
-          year: "5th Year - BTI", 
-          position: "Sub-Head", 
-          college: "MPSTME",
-          Image: "/core images/Mudith Shetty.jpg"
-          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
-        },
-        
-       
       ],
       "Design & UX": [
         { 
@@ -140,14 +171,7 @@ const teamData = {
     },
     NonTech: {
       "Business Development": [
-        { 
-          name: "Kavya Desai", 
-          year: "2nd Year - BTech", 
-          position: "Head", 
-          college: "MPSTME",
-          Image: "/core images/"
-          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
-        },
+        
         { 
           name: "Pia Chalikwar", 
           year: "5th Year - BTI", 
@@ -235,6 +259,14 @@ const teamData = {
           /*skills: ["Instagram", "TikTok", "Community Management"]*/
         },
         { 
+          name: "Pusti Parekh", 
+          year: "Year Unknown", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/Pusti Parekh.jpeg"
+          /*skills: ["Instagram", "TikTok", "Community Management"]*/
+        },
+        { 
           name: "Manav Mehta", 
           year: "Year Unknown", 
           position: "Sub-head", 
@@ -242,6 +274,7 @@ const teamData = {
           Image: "/core images/manav mehta.jpg"
           /*skills: ["Instagram", "TikTok", "Community Management"]*/
         },
+        
       ],
       "Event Operations": [
         { 
@@ -288,6 +321,14 @@ const teamData = {
         },
         { 
           name: "Sharanya Velamuri", 
+          year: "3rd Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/ "
+          /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
+        },
+        { 
+          name: "Shlok Parikh", 
           year: "3rd Year - BTI", 
           position: "Sub-Head", 
           college: "MPSTME",
