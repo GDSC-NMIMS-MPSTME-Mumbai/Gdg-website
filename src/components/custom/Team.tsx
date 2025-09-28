@@ -182,8 +182,8 @@ const teamData = {
         },
         { 
           name: "Gul Chaudhary", 
-          year: "5th Year - BTI", 
-          position: "Head", 
+          year: "4th Year - BTI", 
+          position: "Sub-Head", 
           college: "MPSTME",
           Image: "/core images/Gul Chaudhary.jpeg"
           /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
