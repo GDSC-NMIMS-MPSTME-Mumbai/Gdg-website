@@ -580,14 +580,17 @@ export function Team() {
                            px-8 py-3 rounded-xl font-semibold transition-all duration-300"
                 >
                   Current Team 2025
-                </TabsTrigger>
-                <TabsTrigger 
+                </TabsTrigger>  
+                
+                
+                {/*COMMENTED OUT THE ALUMNI SECTION FOR NOW*/}
+                {/*<TabsTrigger 
                   value="2024" 
                   className="data-[state=active]:bg-white data-[state=active]:text-black 
                            px-8 py-3 rounded-xl font-semibold transition-all duration-300"
                 >
                   Alumni 2024
-                </TabsTrigger>
+                </TabsTrigger>*/}
               </TabsList>
             </div>
 
