@@ -15,18 +15,18 @@ const projects = [
   {
     title: "MPSTME OnTrack",
     description: "Campus navigation tool for new students at MPSTME to aid in finding their way around campus",
-    cover: "/ontrack.jpg",
-    images: ["/ontrack.jpg", "/ontrack2.jpg", "/ontrack3.jpg"],
-    link: "",
+    cover: "../../public/projectimages/ontrack.png",
+    images: ["../../public/projectimages/ontrack.png", "../../public/projectimages/ontrack2.png", "../../public/projectimages/ontrack3.png"],
+    link: "https://play.google.com/store/apps/details?id=com.gdscmpstme.mpstme_ontrack&pcampaignid=web_share",
     tech: ["Flutter", "Node.js"],
     longDescription: "New students always find it difficult to navigate around the MPSTME campus. Our project, MPSTME OnTrack, is a campus navigation tool designed to help new students find their way around campus easily. The tool provides an interactive map of the campus, highlighting key locations such as lecture halls, and administrative offices. Students can search for specific locations or get directions from their current location to their desired destination, making it a comprehensive resource for new students.",
     private: false
   },
   {
     title: "Roast.io",
-    cover: "/roastio.png",
-    images: ["/roastio.png", "/roastio2.png"],
-    link: "#",
+    cover: "../public/projectimages/roast.jpg",
+    images: ["../../public/projectimages/roastio.png", "../../public/projectimages/roast2.png", "../../public/projectimages/roast3.png"],
+    link: "https://roast-io.vercel.app",
     tech: ["React", "Groq", "Python Flask"],
     description: "Humorous roasts of a user's professional online presence using Groq to analyze GitHub and LinkedIn profiles.",
     longDescription: "Roast.io is a full-stack web application designed to deliver humorous and sarcastic roasts of a user's professional online presence. The application uses Groq to analyze a person's GitHub and LinkedIn profiles and generates witty and observational commentary.",
@@ -44,8 +44,8 @@ const projects = [
   },
   {
     title: "Whatsapp ChatBot",
-    cover: "/whatsapp.png",
-    images: ["/whatsapp.png", "/whatsapp2.png"],
+    cover: "../projectimages/whatsappbot1.png",
+    images: ["../projectimages/whatsappbot.jpg", "../projectimages/whatsappbot2.jpg"],
     link: "#",
     tech: [],
     description: "A chatbot integrated with WhatsApp to provide automated responses and assistance.",
@@ -54,8 +54,8 @@ const projects = [
   },
   {
     title: "2D Brawl",
-    cover: "/2dbrawl.png",
-    images: ["/2dbrawl.png", "/2dbrawl2.png"],
+    cover: "../projectimages/brawl.jpg",
+    images: ["../projectimages/brawl.jpg", "../projectimages/brawl2.jpg", "../projectimages/brawl3.jpg"],
     link: "#",
     tech: ["Unity", "C#"],
     description: "A 2D fighting game developed using Unity, featuring various characters and combat mechanics.",
@@ -102,7 +102,7 @@ function ProjectDialog({ project }: { project: typeof projects[0] }) {
                 key={project.images[current]}
                 src={project.images[current]}
                 alt={project.title}
-                className="w-full h-64 object-cover rounded-lg"
+                className="max-h-64 max-w-full w-auto h-auto object-contain rounded-lg mx-auto bg-black"
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
