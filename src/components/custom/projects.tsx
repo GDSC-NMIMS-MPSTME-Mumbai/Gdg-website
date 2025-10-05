@@ -15,8 +15,8 @@ const projects = [
   {
     title: "MPSTME OnTrack",
     description: "Campus navigation tool for new students at MPSTME to aid in finding their way around campus",
-    cover: "../../public/projectimages/ontrack.png",
-    images: ["../../public/projectimages/ontrack.png", "../../public/projectimages/ontrack2.png", "../../public/projectimages/ontrack3.png"],
+    cover: "projectimages/ontrack.png",
+    images: ["projectimages/ontrack.png", "projectimages/ontrack2.png", "projectimages/ontrack3.png"],
     link: "https://play.google.com/store/apps/details?id=com.gdscmpstme.mpstme_ontrack&pcampaignid=web_share",
     tech: ["Flutter", "Node.js"],
     longDescription: "New students always find it difficult to navigate around the MPSTME campus. Our project, MPSTME OnTrack, is a campus navigation tool designed to help new students find their way around campus easily. The tool provides an interactive map of the campus, highlighting key locations such as lecture halls, and administrative offices. Students can search for specific locations or get directions from their current location to their desired destination, making it a comprehensive resource for new students.",
@@ -24,8 +24,8 @@ const projects = [
   },
   {
     title: "Roast.io",
-    cover: "../public/projectimages/roast.jpg",
-    images: ["../../public/projectimages/roastio.png", "../../public/projectimages/roast2.png", "../../public/projectimages/roast3.png"],
+    cover: "projectimages/roast.jpg",
+    images: ["projectimages/roastio.png", "projectimages/roast2.png", "projectimages/roast3.png"],
     link: "https://roast-io.vercel.app",
     tech: ["React", "Groq", "Python Flask"],
     description: "Humorous roasts of a user's professional online presence using Groq to analyze GitHub and LinkedIn profiles.",
@@ -34,8 +34,8 @@ const projects = [
   },
   {
     title: "Lab Experiment Solver",
-    cover: "/labexp.png",
-    images: ["/labexp.png", "/labexp2.png"],
+    cover: "projectimages/labSolver.png",
+    images: ["projectimages/labSolver.png","projectimages/labSolver1.png","/projectimages/labSolver2.png", "projectimages/labSolver3.png"],
     link: "#",
     tech: ["Next.js", "Python Flask", "Tailwind CSS"],
     description: "A web application that solves lab experiments by providing step-by-step guidance and solutions.",
@@ -44,8 +44,8 @@ const projects = [
   },
   {
     title: "Whatsapp ChatBot",
-    cover: "../projectimages/whatsappbot1.png",
-    images: ["../projectimages/whatsappbot.jpg", "../projectimages/whatsappbot2.jpg"],
+    cover: "projectimages/whatsappbot1.png",
+    images: ["projectimages/whatsappbot.jpg", "projectimages/whatsappbot2.jpg"],
     link: "#",
     tech: [],
     description: "A chatbot integrated with WhatsApp to provide automated responses and assistance.",
@@ -54,8 +54,8 @@ const projects = [
   },
   {
     title: "2D Brawl",
-    cover: "../projectimages/brawl.jpg",
-    images: ["../projectimages/brawl.jpg", "../projectimages/brawl2.jpg", "../projectimages/brawl3.jpg"],
+    cover: "projectimages/brawl.jpg",
+    images: ["projectimages/brawl.jpg", "projectimages/brawl2.jpg", "projectimages/brawl3.jpg"],
     link: "#",
     tech: ["Unity", "C#"],
     description: "A 2D fighting game developed using Unity, featuring various characters and combat mechanics.",
@@ -90,7 +90,7 @@ function ProjectDialog({ project }: { project: typeof projects[0] }) {
           </div>
           <div className="relative mt-4 w-full h-64 flex items-center justify-center">
             <Button
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/40"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10"
               size="sm"
               onClick={prevImage}
               aria-label="Previous image"
@@ -110,7 +110,7 @@ function ProjectDialog({ project }: { project: typeof projects[0] }) {
               />
             </AnimatePresence>
             <Button
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/40"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10"
               size="sm"
               onClick={nextImage}
               aria-label="Next image"
@@ -137,13 +137,20 @@ function ProjectDialog({ project }: { project: typeof projects[0] }) {
           </div>
           {project.private == false ? (
             <div className="p-4 pt-1">
-              <a href="https://github.com" target="_blank">
+              <a href={project.link} target="_blank">
                 <Button className="w-full transition-all duration-300 mt-4">
-                  Learn More
+                  Check it out
                 </Button>
               </a>
             </div>
-          ) : null}
+          ) : (
+            <div className="p-4 pt-1">
+                <Button className="w-full transition-all duration-300 mt-4">
+                  Deployment coming soon
+                </Button>
+            </div>
+
+          )}
         </DialogDescription>
       </DialogHeader>
     </DialogContent>
