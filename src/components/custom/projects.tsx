@@ -44,8 +44,8 @@ const projects = [
   },
   {
     title: "Whatsapp ChatBot",
-    cover: "/whatsapp.png",
-    images: ["/whatsapp.png", "/whatsapp2.png"],
+    cover: "../projectimages/whatsappbot1.png",
+    images: ["../projectimages/whatsappbot.jpg", "../projectimages/whatsappbot2.jpg"],
     link: "#",
     tech: [],
     description: "A chatbot integrated with WhatsApp to provide automated responses and assistance.",
@@ -54,8 +54,8 @@ const projects = [
   },
   {
     title: "2D Brawl",
-    cover: "/2dbrawl.png",
-    images: ["/2dbrawl.png", "/2dbrawl2.png"],
+    cover: "../projectimages/brawl.jpg",
+    images: ["../projectimages/brawl.jpg", "../projectimages/brawl2.jpg", "../projectimages/brawl3.jpg"],
     link: "#",
     tech: ["Unity", "C#"],
     description: "A 2D fighting game developed using Unity, featuring various characters and combat mechanics.",
