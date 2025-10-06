@@ -78,7 +78,7 @@ function Header() {
       
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
         <p className="text-xl mb-2 serif">Welcome to</p>
-        <h1 className="text-6xl font-bold serif">DCxGDG</h1>
+        <h1 className="text-6xl font-bold serif">GDG OnCampus</h1>
       </div>
     </div>
   );
