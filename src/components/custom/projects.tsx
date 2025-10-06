@@ -6,7 +6,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -35,7 +34,7 @@ const projects = [
   {
     title: "Lab Experiment Solver",
     cover: "projectimages/labSolver.png",
-    images: ["projectimages/labSolver.png","projectimages/labSolver1.png","/projectimages/labSolver2.png", "projectimages/labSolver3.png"],
+    images: ["projectimages/labSolver.png","projectimages/labSolver1.png","projectimages/labSolver2.png", "projectimages/labSolver3.png"],
     link: "#",
     tech: ["Next.js", "Python Flask", "Tailwind CSS"],
     description: "A web application that solves lab experiments by providing step-by-step guidance and solutions.",
@@ -150,6 +149,9 @@ function ProjectDialog({ project }: { project: typeof projects[0] }) {
 }
 
 export function Projects() {
+  const [open, setOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+
   return (
     <section className="w-full py-20 px-4 bg-black">
       <div className="text-center mb-16">
@@ -177,14 +179,14 @@ export function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 50 }}
+            initial={open ? false : { opacity: 0, y: 50 } }
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{
+            transition={open ? {} : {
               delay: index * 0.1,
               duration: 0.2,
               ease: "easeOut"
             }}
-            viewport={{ once: true }}
+            viewport={open ? undefined : { once: true }}
             className="group"
           >
             <CardContainer className="inter-var" containerClassName="py-0">
@@ -221,34 +223,39 @@ export function Projects() {
                   ))}
                 </CardItem>
                 <div className="flex justify-between items-center mt-6">
-                  <CardItem
-                    translateZ={20}
-                    as={Dialog}
-                    className="w-full"
+                  <Button
+                    className="w-full transition-all duration-300"
+                    variant="outline"
+                    onClick={() => {
+                      setSelectedProject(index);
+                      setOpen(true);
+                      // Preload the dialog images
+                      project.images.forEach(src => {
+                        const img = new Image();
+                        img.src = src;
+                      });
+                    }}
                   >
-                    <DialogTrigger asChild>
-                      <Button 
-                        className="w-full transition-all duration-300" 
-                        variant="outline"
-                        onClick={() => {
-                          // Preload the dialog images
-                          project.images.forEach(src => {
-                            const img = new Image();
-                            img.src = src;
-                          });
-                        }}
-                      >
-                        View Project →
-                      </Button>
-                    </DialogTrigger>
-                    <ProjectDialog project={project} />
-                  </CardItem>
+                    View Project →
+                  </Button>
                 </div>
               </CardBody>
             </CardContainer>
           </motion.div>
         ))}
       </div>
+
+      {selectedProject !== null && (
+        <Dialog
+          open={open}
+          onOpenChange={(o) => {
+            setOpen(o);
+            if (!o) setSelectedProject(null);
+          }}
+        >
+          <ProjectDialog project={projects[selectedProject]} />
+        </Dialog>
+      )}
     </section>
   );
 }
