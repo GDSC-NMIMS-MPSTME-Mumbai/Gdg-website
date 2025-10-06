@@ -4,6 +4,51 @@ import { useState } from "react";
 // Team data structure
 const teamData = {
   2025: {
+    SuperCore: [
+      { 
+        name: "Aditya Sharma", 
+        year: "5th Year - BTI", 
+        position: "President", 
+        college: "MPSTME",
+        Image: "/core images/aditya sharma.jpg", 
+      },
+      
+      { 
+        name: "Jugaad Chhabra", 
+        year: "6th Year - BTI", 
+        position: "Chief Of Technology", 
+        college: "MPSTME",
+        Image: "/core images/jugaad chhabra.jpg", // Replace with the actual image path
+      },
+      { 
+        name: "Manan Gandhi", 
+        year: "4th Year - BTI", 
+        position: "Chief Of Engineering", 
+        college: "MPSTME",
+        Image: "/core images/manan gandhi.png", // Replace with the actual image path
+      },
+      { 
+        name: "Disha Sejpal", 
+        year: "5th Year - BTI", 
+        position: "Chief Of Operations", 
+        college: "MPSTME",
+        Image: "/core images/disha sejpal.jpeg", // Replace with the actual image path
+      },
+      { 
+        name: "Mishitha Verma", 
+        year: "3rd Year - BTech", 
+        position: "Chief Of Communication And Outreach", 
+        college: "MPSTME",
+        Image: "/core images/Mishitha Verma.jpeg", // Replace with the actual image path
+      },
+      { 
+        name: "Samarth Roy Chowdhury", 
+        year: "5th Year - BTI", 
+        position: "Treasurer", 
+        college: "MPSTME",
+        Image: "/core images/Samarth Roy Chowdhury.jpg",
+      }
+    ],
     Tech: {
       "Web Development": [
         { 
@@ -67,7 +112,7 @@ const teamData = {
           year: "4th Year - BTI", 
           position: "Sub-Head", 
           college: "MPSTME",
-          /*Image: "/core images/"*/
+          Image: "/core images/likhit desai.jpg"
           
           /*skills: ["React", "Node.js", "TypeScript"]*/
         },
@@ -95,7 +140,7 @@ const teamData = {
           year: "Unknown year", 
           position: "Sub-Head", 
           college: "MPSTME",
-          Image: "/core images/"
+          Image: "/core images/Yohaan Guzdar.jpeg"
           /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
         { 
@@ -103,7 +148,7 @@ const teamData = {
           year: "Unknown year", 
           position: "Sub-Head", 
           college: "MPSTME",
-          Image: "/core images/"
+          Image: "/core images/SHREYAS TEKAWADE.jpg"
           /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
       ],
@@ -130,7 +175,7 @@ const teamData = {
           year: "2nd Year - MBATech", 
           position: "Sub-Head", 
           college: "MPSTME",
-          /*Image: "/core images/"*/
+          Image: "/core images/arth agrawal.jpg"
           /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
       ],
@@ -219,7 +264,7 @@ const teamData = {
           year: "3rd Year - BTI", 
           position: "Sub-Head", 
           college: "MPSTME",
-          Image: "/core images/"
+          Image: "/core images/dhanavi shah.jpg"
           /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
         },
         { 
@@ -255,7 +300,7 @@ const teamData = {
           year: "Year Unknown", 
           position: "Head", 
           college: "MPSTME",
-          Image: "/core images/"
+          Image: "/core images/loveleen keshwani.png"
           /*skills: ["Instagram", "TikTok", "Community Management"]*/
         },
         { 
@@ -316,7 +361,7 @@ const teamData = {
           year: "Year Unknown", 
           position: "Head", 
           college: "MPSTME",
-          Image: "/core images/ "
+          Image: "/core images/josh dave.jpg "
           /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
         },
         { 
@@ -332,7 +377,7 @@ const teamData = {
           year: "3rd Year - BTI", 
           position: "Sub-Head", 
           college: "MPSTME",
-          Image: "/core images/ "
+          Image: "/core images/shlok parikh.png"
           /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
         }
       ],
@@ -400,7 +445,8 @@ const teamData = {
       achievement: "Mentored 20+ developers"
     }
   ]
-};
+}
+
 
 export function Team() {
   const [selectedDepartment, setSelectedDepartment] = useState("Web Development");
@@ -616,6 +662,14 @@ export function Team() {
                     >
                       Operations Teams
                     </TabsTrigger>
+                    <TabsTrigger 
+                      value="Super-Core" 
+                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 
+                               data-[state=active]:to-gray-600 data-[state=active]:text-white 
+                               px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                    >
+                      Super Core
+                    </TabsTrigger>
                   </TabsList>
                 </div>
 
@@ -658,6 +712,18 @@ export function Team() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[600px] overflow-y-auto 
                                   scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20">
                     {teamData[2025].NonTech[selectedNonTech]?.map((member, index) => (
+                      <MemberCard key={index} member={member} />
+                    ))}
+                  </div>
+                </TabsContent>
+                <TabsContent value="Super-Core" className="text-center">
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-semibold text-white mb-6">Super Core</h3>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[600px] overflow-y-auto 
+                                scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20">
+                    {teamData[2025].SuperCore?.map((member, index) => (
                       <MemberCard key={index} member={member} />
                     ))}
                   </div>
