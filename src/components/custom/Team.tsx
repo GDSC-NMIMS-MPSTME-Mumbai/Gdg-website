@@ -4,218 +4,399 @@ import { useState } from "react";
 // Team data structure
 const teamData = {
   2025: {
+    SuperCore: [
+      { 
+        name: "Aditya Sharma", 
+        year: "5th Year - BTI", 
+        position: "President", 
+        college: "MPSTME",
+        Image: "/core images/aditya sharma.jpg", 
+      },
+      
+      { 
+        name: "Jugaad Chhabra", 
+        year: "6th Year - BTI", 
+        position: "Chief Of Technology", 
+        college: "MPSTME",
+        Image: "/core images/jugaad chhabra.jpg", // Replace with the actual image path
+      },
+      { 
+        name: "Manan Gandhi", 
+        year: "4th Year - BTI", 
+        position: "Chief Of Engineering", 
+        college: "MPSTME",
+        Image: "/core images/manan gandhi.png", // Replace with the actual image path
+      },
+      { 
+        name: "Disha Sejpal", 
+        year: "5th Year - BTI", 
+        position: "Chief Of Operations", 
+        college: "MPSTME",
+        Image: "/core images/disha sejpal.jpeg", // Replace with the actual image path
+      },
+      { 
+        name: "Mishitha Verma", 
+        year: "3rd Year - BTech", 
+        position: "Chief Of Communication And Outreach", 
+        college: "MPSTME",
+        Image: "/core images/Mishitha Verma.jpeg", // Replace with the actual image path
+      },
+      { 
+        name: "Samarth Roy Chowdhury", 
+        year: "5th Year - BTI", 
+        position: "Treasurer", 
+        college: "MPSTME",
+        Image: "/core images/Samarth Roy Chowdhury.jpg",
+      }
+    ],
     Tech: {
       "Web Development": [
         { 
-          name: "Alex Chen", 
-          year: "3rd Year", 
-          position: "Lead Developer", 
-          college: "Computer Science",
-          skills: ["React", "Node.js", "TypeScript"]
+          name: "Moksh Shah", 
+          year: "4th Year - BTI", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/IMG-20250609-WA0009 - Moksh Shah.jpg",
+          /*skills: ["React", "Node.js", "TypeScript"]*/
         },
         { 
-          name: "Sarah Kumar", 
-          year: "4th Year", 
-          position: "Frontend Developer", 
-          college: "Information Technology",
-          skills: ["Vue.js", "CSS", "JavaScript"]
+          name: "Krisha Chawan", 
+          year: "5th Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/IMG_8686 - krisha chawan.jpeg",
+          /*skills: ["React", "Node.js", "TypeScript"]*/
         },
         { 
-          name: "Mike Johnson", 
-          year: "2nd Year", 
-          position: "Backend Developer", 
-          college: "Software Engineering",
-          skills: ["Python", "Django", "PostgreSQL"]
+          name: "Om Anaokar", 
+          year: "4th Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/IMG_5545 - Om Anaokar.jpeg",
+          /*skills: ["React", "Node.js", "TypeScript"]*/
         }
       ],
-      "Mobile Development": [
+      "App Development": [
         { 
-          name: "Priya Patel", 
-          year: "3rd Year", 
-          position: "Mobile Lead", 
-          college: "Computer Science",
-          skills: ["Flutter", "Dart", "Firebase"]
+          name: "Arnav Jain", 
+          year: "2nd Year - BTech", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/Arnav Jain.jpeg"
+          
+          /*skills: ["React", "Node.js", "TypeScript"]*/
         },
         { 
-          name: "David Lee", 
-          year: "4th Year", 
-          position: "React Native Developer", 
-          college: "Information Technology",
-          skills: ["React Native", "JavaScript", "Redux"]
+          name: "Nathan Dsouza", 
+          year: "Unknown year", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/Nathan Dsouza.jpeg"
+          
+          /*skills: ["React", "Node.js", "TypeScript"]*/
+        },
+        
+      ],
+      "Game Development": [
+        { 
+          name: "Aryan Pathare", 
+          year: "4th Year - BTI", 
+          position: "Head", 
+          college: "MPSTME",
+          /*Image: "/core images/"*/
+          
+          /*skills: ["React", "Node.js", "TypeScript"]*/
         },
         { 
-          name: "Emma Wilson", 
-          year: "2nd Year", 
-          position: "iOS Developer", 
-          college: "Software Engineering",
-          skills: ["Swift", "SwiftUI", "Xcode"]
-        }
+          name: "Likhit Desai", 
+          year: "4th Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/likhit desai.jpg"
+          
+          /*skills: ["React", "Node.js", "TypeScript"]*/
+        },
+        
       ],
       "Cybersecurity": [
         { 
-          name: "Raj Sharma", 
-          year: "4th Year", 
-          position: "Security Lead", 
-          college: "Cybersecurity",
-          skills: ["Penetration Testing", "Network Security", "Linux"]
+          name: "Mantek Singh", 
+          year: "3rd Year - BTech", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/IMG_0085 - MANTEK SINGH BURN.jpeg"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
         { 
-          name: "Lisa Zhang", 
-          year: "3rd Year", 
-          position: "Security Analyst", 
-          college: "Computer Science",
-          skills: ["Malware Analysis", "SIEM", "Python"]
+          name: "Vyom Shah", 
+          year: "Unknown year", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
         { 
-          name: "Tom Brown", 
-          year: "2nd Year", 
-          position: "Junior Analyst", 
-          college: "Information Security",
-          skills: ["Wireshark", "Nmap", "Metasploit"]
-        }
+          name: "Yohaan Guzdar", 
+          year: "Unknown year", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/Yohaan Guzdar.jpeg"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
+        },
+        { 
+          name: "Shreyas Tekawade", 
+          year: "Unknown year", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/SHREYAS TEKAWADE.jpg"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
+        },
       ],
+
       "AI & Machine Learning": [
         { 
-          name: "Aisha Khan", 
-          year: "4th Year", 
-          position: "ML Engineer", 
-          college: "Data Science",
-          skills: ["TensorFlow", "PyTorch", "Python"]
+          name: "Mudith Shetty", 
+          year: "5th Year - BTI", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/Mudith Shetty.jpg"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
         { 
-          name: "John Smith", 
-          year: "3rd Year", 
-          position: "AI Researcher", 
-          college: "Computer Science",
-          skills: ["NLP", "Computer Vision", "R"]
+          name: "Dhruv", 
+          year: "Unknown Year", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
         },
         { 
-          name: "Maya Rodriguez", 
-          year: "2nd Year", 
-          position: "Data Analyst", 
-          college: "Statistics",
-          skills: ["Pandas", "Matplotlib", "SQL"]
-        }
+          name: "Arth Agrawal", 
+          year: "2nd Year - MBATech", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/arth agrawal.jpg"
+          /*skills: ["TensorFlow", "PyTorch", "Python"]*/
+        },
       ],
       "Design & UX": [
         { 
-          name: "Sophie Taylor", 
-          year: "3rd Year", 
-          position: "UI/UX Lead", 
-          college: "Design",
-          skills: ["Figma", "Adobe XD", "Prototyping"]
+          name: "Jash Kanani", 
+          year: "5th Year - BTI", 
+          position: "Head", 
+          college: "MPSTME",
+          /*skills: ["Figma", "Adobe XD", "Prototyping"]*/
+          Image: "/core images/IMG-20240426-WA0034 - jash kanani.jpg"
         },
         { 
-          name: "Ryan Kim", 
-          year: "4th Year", 
-          position: "Graphic Designer", 
-          college: "Visual Arts",
-          skills: ["Photoshop", "Illustrator", "Branding"]
+          name: "Tanay Kumar", 
+          year: "4th Year - BTI", 
+          position: "Head", 
+          college: "MPSTME",
+          /*skills: ["Figma", "Adobe XD", "Prototyping"]*/
+          Image: "/core images/Untitled design (5) - Tanay Kumar.png"
         },
         { 
-          name: "Zoe Martinez", 
-          year: "2nd Year", 
-          position: "Product Designer", 
-          college: "Design Technology",
-          skills: ["User Research", "Wireframing", "Sketch"]
-        }
+          name: "Shlok Agheda", 
+          year: "5th Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          /*skills: ["Figma", "Adobe XD", "Prototyping"]*/
+          Image: "/core images/Shlok Agheda - Shlok Agheda.jpg"
+        },
+        { 
+          name: "Devesh Bogar", 
+          year: "2nd Year - BTech", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          /*skills: ["Figma", "Adobe XD", "Prototyping"]*/
+          Image: "/core images/IMG_5871 - Devesh Bogar.jpeg"
+        },
       ]
     },
     NonTech: {
-      "Marketing": [
+      "Business Development": [
+        
         { 
-          name: "Jessica Adams", 
-          year: "3rd Year", 
-          position: "Marketing Lead", 
-          college: "Business Administration",
-          skills: ["Digital Marketing", "SEO", "Content Strategy"]
+          name: "Pia Chalikwar", 
+          year: "5th Year - BTI", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/fe311ab5-438c-46a8-ab1b-ecbfd82b8736 - Pia Chalikwar.jpeg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
         },
         { 
-          name: "Kevin Wong", 
-          year: "4th Year", 
-          position: "Brand Manager", 
-          college: "Marketing",
-          skills: ["Brand Strategy", "Social Media", "Analytics"]
+          name: "Gul Chaudhary", 
+          year: "4th Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/Gul Chaudhary.jpeg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+        { 
+          name: "Muaaz Shaikh", 
+          year: "2nd Year - BTech", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/IMG_5233 - Muaaz Shaikh.png"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+      ],
+      "Digital Creatives": [
+        { 
+          name: "Anvesh Agrawal", 
+          year: "Year Unknown", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+        { 
+          name: "Kanwaljit Singh", 
+          year: "Year Unknown", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/1 - Kanwaljit Singh.jpeg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+        { 
+          name: "Dhanavi Shah", 
+          year: "3rd Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/dhanavi shah.jpg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+        { 
+          name: "Vedant Patel", 
+          year: "4th Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+      ],
+      "In-house Creatives": [
+        { 
+          name: "Riti Goradia", 
+          year: "2nd Year - BTech", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/Riti Goradia.jpeg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+        { 
+          name: "Dhruvil Parekh", 
+          year: "2nd Year - BTech", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/Dhruvil Parekh.jpeg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+      ],
+      "Social Media and Content Writing": [
+        { 
+          name: "Loveleen Keshwani", 
+          year: "Year Unknown", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/loveleen keshwani.png"
+          /*skills: ["Instagram", "TikTok", "Community Management"]*/
+        },
+        { 
+          name: "Pusti Parekh", 
+          year: "Year Unknown", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/Pusti Parekh.jpeg"
+          /*skills: ["Instagram", "TikTok", "Community Management"]*/
+        },
+        { 
+          name: "Manav Mehta", 
+          year: "Year Unknown", 
+          position: "Sub-head", 
+          college: "MPSTME",
+          Image: "/core images/manav mehta.jpg"
+          /*skills: ["Instagram", "TikTok", "Community Management"]*/
+        },
+        
+      ],
+      "Event Operations": [
+        { 
+          name: "Jash Pancholi", 
+          year: "4th Year - BTI", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/Jash_Pancholi.jpg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+        { 
+          name: "Harshil Desai", 
+          year: "5th Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/IMG_20250606_215750 - HARSHIL DESAI.jpg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+        { 
+          name: "Heet Ranpura", 
+          year: "2nd Year - BTech", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/IMG_7493 - Heet Ranpura.jpeg"
+          /*skills: ["Process Optimization", "Team Management", "Strategy"]*/
+        },
+      ],
+      "Public Relations": [
+        { 
+          name: "Rida Parihar", 
+          year: "Year Unknown", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/Rida Parihar.jpg"
+          /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
+        },
+        { 
+          name: "Josh Dave", 
+          year: "Year Unknown", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/josh dave.jpg "
+          /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
+        },
+        { 
+          name: "Sharanya Velamuri", 
+          year: "3rd Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/ "
+          /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
+        },
+        { 
+          name: "Shlok Parikh", 
+          year: "3rd Year - BTI", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/shlok parikh.png"
+          /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
         }
       ],
-      "Events": [
+      "Photography": [
         { 
-          name: "Amanda Foster", 
-          year: "2nd Year", 
-          position: "Event Coordinator", 
-          college: "Event Management",
-          skills: ["Event Planning", "Vendor Management", "Logistics"]
+          name: "Maanas Vinze", 
+          year: "1st Year - MBATech", 
+          position: "Head", 
+          college: "MPSTME",
+          Image: "/core images/IMG-20250914-WA0150 - Maanas Vinze.jpg"
+          /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
         },
         { 
-          name: "Chris Davis", 
-          year: "3rd Year", 
-          position: "Logistics Manager", 
-          college: "Business",
-          skills: ["Project Management", "Budgeting", "Coordination"]
-        }
-      ],
-      "Content Creation": [
-        { 
-          name: "Natalie Green", 
-          year: "4th Year", 
-          position: "Content Lead", 
-          college: "Communications",
-          skills: ["Writing", "Video Editing", "Photography"]
-        },
-        { 
-          name: "Sam Parker", 
-          year: "2nd Year", 
-          position: "Content Writer", 
-          college: "English Literature",
-          skills: ["Copywriting", "Blog Writing", "Research"]
-        }
-      ],
-      "Social Media": [
-        { 
-          name: "Isabella Ross", 
-          year: "3rd Year", 
-          position: "Social Media Manager", 
-          college: "Digital Marketing",
-          skills: ["Instagram", "TikTok", "Community Management"]
-        },
-        { 
-          name: "Jake Miller", 
-          year: "2nd Year", 
-          position: "Community Manager", 
-          college: "Communications",
-          skills: ["Discord", "Engagement", "Customer Service"]
-        }
-      ],
-      "Operations": [
-        { 
-          name: "Rachel Thompson", 
-          year: "4th Year", 
-          position: "Operations Lead", 
-          college: "Business Operations",
-          skills: ["Process Optimization", "Team Management", "Strategy"]
-        },
-        { 
-          name: "Daniel Kumar", 
-          year: "3rd Year", 
-          position: "Project Manager", 
-          college: "Management",
-          skills: ["Agile", "Scrum", "Risk Management"]
-        }
-      ],
-      "Finance": [
-        { 
-          name: "Ashley Liu", 
-          year: "4th Year", 
-          position: "Finance Lead", 
-          college: "Accounting",
-          skills: ["Financial Planning", "Budgeting", "Excel"]
-        },
-        { 
-          name: "Marcus Johnson", 
-          year: "3rd Year", 
-          position: "Treasurer", 
-          college: "Finance",
-          skills: ["Accounting", "Financial Analysis", "QuickBooks"]
+          name: "Ishika Saini", 
+          year: "2nd Year - BTech", 
+          position: "Sub-Head", 
+          college: "MPSTME",
+          Image: "/core images/Ishika_Saini.jpg"
+           /*skills: ["Financial Planning", "Budgeting", "Excel"]*/
         }
       ]
     }
@@ -264,7 +445,8 @@ const teamData = {
       achievement: "Mentored 20+ developers"
     }
   ]
-};
+}
+
 
 export function Team() {
   const [selectedDepartment, setSelectedDepartment] = useState("Web Development");
@@ -332,10 +514,27 @@ export function Team() {
                 {member.position}
               </p>
             </div>
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 
-                            flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <div className="w-6 h-6 rounded-full bg-white/20"></div>
-            </div>
+             {/* --- CHANGE STARTS HERE --- */}
+            {/* We will replace the placeholder div with a conditional image */}
+
+            {member.Image ? (
+              // If an image exists, display it
+              <img 
+                src={member.Image}
+                alt={member.name}
+                className="w-20 h-20 rounded-full object-cover border-2 border-white/30 
+                           group-hover:scale-110 group-hover:border-blue-300/70 transition-all duration-300"
+              />
+            ) : (
+              // Otherwise, show the original placeholder
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 
+                              flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-10 h-10 rounded-full bg-white/20"></div>
+              </div>
+            )}
+
+            {/* --- CHANGE ENDS HERE --- */}
+
           </div>
           
           <div className="space-y-2 mb-4">
@@ -379,19 +578,21 @@ export function Team() {
 
   const techOptions = [
     { value: "Web Development", label: "Web Development" },
-    { value: "Mobile Development", label: "Mobile Development" },
+    { value: "App Development", label: "App Development" },
     { value: "Cybersecurity", label: "Cybersecurity" },
+    { value: "Game Development", label: "Game Development" },
     { value: "AI & Machine Learning", label: "AI & Machine Learning" },
     { value: "Design & UX", label: "Design & UX" },
   ];
 
   const nonTechOptions = [
-    { value: "Marketing", label: "Marketing" },
-    { value: "Events", label: "Events" },
-    { value: "Content Creation", label: "Content Creation" },
-    { value: "Social Media", label: "Social Media" },
-    { value: "Operations", label: "Operations" },
-    { value: "Finance", label: "Finance" },
+    { value: "Business Development", label: "Business Development" },
+    { value: "Event Operations", label: "Event Operations" },
+    { value: "Digital Creatives", label: "Digital Creatives" },
+    { value: "In-house Creatives", label: "In-house Creatives" },
+    { value: "Public Relations", label: "Public Relations" },
+    { value: "Social Media and Content Writing", label: "Social Media and Content Writing" },
+    { value: "Photography", label: "Photography" },
   ];
 
   return (
@@ -425,14 +626,17 @@ export function Team() {
                            px-8 py-3 rounded-xl font-semibold transition-all duration-300"
                 >
                   Current Team 2025
-                </TabsTrigger>
-                <TabsTrigger 
+                </TabsTrigger>  
+                
+                
+                {/*COMMENTED OUT THE ALUMNI SECTION FOR NOW*/}
+                {/*<TabsTrigger 
                   value="2024" 
                   className="data-[state=active]:bg-white data-[state=active]:text-black 
                            px-8 py-3 rounded-xl font-semibold transition-all duration-300"
                 >
                   Alumni 2024
-                </TabsTrigger>
+                </TabsTrigger>*/}
               </TabsList>
             </div>
 
@@ -457,6 +661,14 @@ export function Team() {
                                px-6 py-3 rounded-xl font-medium transition-all duration-300"
                     >
                       Operations Teams
+                    </TabsTrigger>
+                    <TabsTrigger 
+                      value="Super-Core" 
+                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 
+                               data-[state=active]:to-gray-600 data-[state=active]:text-white 
+                               px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                    >
+                      Super Core
                     </TabsTrigger>
                   </TabsList>
                 </div>
@@ -500,6 +712,18 @@ export function Team() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[600px] overflow-y-auto 
                                   scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20">
                     {teamData[2025].NonTech[selectedNonTech]?.map((member, index) => (
+                      <MemberCard key={index} member={member} />
+                    ))}
+                  </div>
+                </TabsContent>
+                <TabsContent value="Super-Core" className="text-center">
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-semibold text-white mb-6">Super Core</h3>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[600px] overflow-y-auto 
+                                scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20">
+                    {teamData[2025].SuperCore?.map((member, index) => (
                       <MemberCard key={index} member={member} />
                     ))}
                   </div>
