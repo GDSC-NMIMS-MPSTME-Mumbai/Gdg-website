@@ -620,6 +620,7 @@ export function Team() {
             {/* Year Tabs */}
             <div className="flex justify-center mb-8">
               <TabsList className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-2">
+              
                 <TabsTrigger 
                   value="2025" 
                   className="data-[state=active]:bg-white data-[state=active]:text-black 
@@ -642,10 +643,18 @@ export function Team() {
 
             {/* 2025 Content */}
             <TabsContent value="2025" className="w-full">
-              <Tabs defaultValue="Tech" className="w-full">
+              <Tabs defaultValue="Super-Core" className="w-full">
                 {/* Tech/Non-Tech Tabs */}
                 <div className="flex justify-center mb-8">
                   <TabsList className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-2">
+                  <TabsTrigger 
+                      value="Super-Core" 
+                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 
+                               data-[state=active]:to-gray-600 data-[state=active]:text-white 
+                               px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                    >
+                      Super Core
+                    </TabsTrigger>
                     <TabsTrigger 
                       value="Tech" 
                       className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 
@@ -661,14 +670,6 @@ export function Team() {
                                px-6 py-3 rounded-xl font-medium transition-all duration-300"
                     >
                       Operations Teams
-                    </TabsTrigger>
-                    <TabsTrigger 
-                      value="Super-Core" 
-                      className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 
-                               data-[state=active]:to-gray-600 data-[state=active]:text-white 
-                               px-6 py-3 rounded-xl font-medium transition-all duration-300"
-                    >
-                      Super Core
                     </TabsTrigger>
                   </TabsList>
                 </div>
