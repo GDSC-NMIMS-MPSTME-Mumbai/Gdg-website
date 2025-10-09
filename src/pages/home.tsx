@@ -13,14 +13,14 @@ function Home() {
 
         {/* Section 2: Team */}
         <section className="min-h-screen snap-start snap-always flex flex-col justify-center">
-          <div className="py-12 w-full">
+          <div className=" w-full">
             <Team />
           </div>
         </section>
 
         {/* Section 2: Projects */}
         <section className="min-h-screen snap-start snap-always flex flex-col justify-center">
-          <div className="py-12">
+          <div className="">
             <Projects />
           </div>
         </section>

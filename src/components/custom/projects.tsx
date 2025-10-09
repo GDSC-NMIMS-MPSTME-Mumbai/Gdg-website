@@ -26,7 +26,7 @@ const projects = [
     cover: "projectimages/roast.jpg",
     images: ["projectimages/roastio.png", "projectimages/roast2.png", "projectimages/roast3.png"],
     link: "https://roast-io.vercel.app",
-    tech: ["React", "Groq", "Python Flask"],
+    tech: ["React", "Groq", "Flask"],
     description: "Humorous roasts of a user's professional online presence using Groq to analyze GitHub and LinkedIn profiles.",
     longDescription: "Roast.io is a full-stack web application designed to deliver humorous and sarcastic roasts of a user's professional online presence. The application uses Groq to analyze a person's GitHub and LinkedIn profiles and generates witty and observational commentary.",
     private: false
@@ -36,7 +36,7 @@ const projects = [
     cover: "projectimages/labSolver.png",
     images: ["projectimages/labSolver.png","projectimages/labSolver1.png","projectimages/labSolver2.png", "projectimages/labSolver3.png"],
     link: "#",
-    tech: ["Next.js", "Python Flask", "Tailwind CSS"],
+    tech: ["Next.js", "Flask", "Gemini"],
     description: "A web application that solves lab experiments by providing step-by-step guidance and solutions.",
     longDescription: "The Lab Experiment Solver is a web application designed to assist students in solving lab experiments. The application provides step-by-step guidance and solutions for various lab experiments, making it easier for students to understand and complete their assignments. The app features a user-friendly interface, allowing students to easily navigate through different experiments and access the necessary information.",
     private: true
@@ -46,7 +46,7 @@ const projects = [
     cover: "projectimages/whatsappbot1.png",
     images: ["projectimages/whatsappbot.jpg", "projectimages/whatsappbot2.jpg"],
     link: "#",
-    tech: ["Python", "Whatsapp API"],
+    tech: ["FastAPI", "Docker", "LangChain", "Meta Graph APi"],
     description: "A chatbot integrated with WhatsApp to provide automated responses and assistance.",
     longDescription: "The WhatsApp ChatBot is an automated chatbot integrated with the WhatsApp messaging platform. The chatbot is designed to provide automated responses and assistance to users, making it easier for them to get the information they need quickly. The chatbot can handle a variety of tasks, such as answering frequently asked questions, providing customer support, and assisting with basic inquiries about our signature event, foobar.",
     private: true
