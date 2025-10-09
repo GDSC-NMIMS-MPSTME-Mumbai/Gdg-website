@@ -1,135 +1,103 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const achievements = [
-  "Best Tech Club 2024",
-  "100+ Active Contributors",
-  "Hosted 15+ Workshops",
-  "Impacted 1000+ Students",
-  "Collaborated with 6 Companies"
-];
+import Carousel from "./Carousel";
+import { FiAward, FiUsers, FiBook, FiTarget, FiTrendingUp } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
 
 export function AchievementsCarousel() {
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const [baseWidth, setBaseWidth] = useState(400);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const next = () => {
-    setDirection(1);
-    setCurrent((current + 1) % achievements.length);
-  };
+  // Responsive width based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setBaseWidth(280);
+      } else if (window.innerWidth < 1024) {
+        setBaseWidth(320);
+      } else {
+        setBaseWidth(400);
+      }
+    };
 
-  const prev = () => {
-    setDirection(-1);
-    setCurrent((current - 1 + achievements.length) % achievements.length);
-  };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    setIsLoading(false);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 200 : -200,
-      y: direction > 0 ? 50 : 50,
-      opacity: 0,
-      scale: 0.5,
-      rotate: direction > 0 ? 30 : -30
-    }),
-    center: {
-      x: 0,
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      rotate: 0
+  const achievementItems = [
+    {
+      title: "Best Tech Club 2024",
+      description: "Recognized for excellence and innovation in our tech community",
+      id: 1,
+      icon: <FiAward className="carousel-icon" />
     },
-    exit: (direction: number) => ({
-      x: direction > 0 ? -200 : 200,
-      y: direction > 0 ? 50 : 50,
-      opacity: 0,
-      scale: 0.5,
-      rotate: direction > 0 ? -30 : 30
-    })
-  };
+    {
+      title: "100+ Active Contributors",
+      description: "A thriving community of dedicated members and volunteers",
+      id: 2,
+      icon: <FiUsers className="carousel-icon" />
+    },
+    {
+      title: "Hosted 15+ Workshops",
+      description: "Sharing knowledge and expertise with our members",
+      id: 3,
+      icon: <FiBook className="carousel-icon" />
+    },
+    {
+      title: "Impacted 1000+ Students",
+      description: "Making a real difference in students' lives and careers",
+      id: 4,
+      icon: <FiTarget className="carousel-icon" />
+    },
+    {
+      title: "Collaborated with 6 Companies",
+      description: "Building partnerships and creating opportunities",
+      id: 5,
+      icon: <FiTrendingUp className="carousel-icon" />
+    }
+  ];
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen w-full bg-black">
+        <p className="text-white text-xl">Loading achievements...</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-[500px] px-4 md:px-8 gap-8 md:gap-12 w-screen">
-      <div className="w-screen md:w-2/3 text-center md:text-left">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight"
-        >
-          Our<br />Achievements
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.8 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mt-2 md:mt-4 text-base md:text-lg text-gray-600"
-        >
+    <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-screen px-6 sm:px-8 lg:px-16 xl:px-24 gap-8 sm:gap-12 lg:gap-24 w-full max-w-[1600px] mx-auto py-12 lg:py-0 bg-black">
+      {/* Left side - Title */}
+      <div className="flex-shrink-0 w-full lg:w-[450px] text-center lg:text-left">
+        <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-[0.9] text-blue-500">
+          Our
+          <br />
+          Achievements
+        </h2>
+        <div className="h-1.5 w-24 sm:w-32 bg-blue-500 rounded-full mb-6 mx-auto lg:mx-0" />
+        <p className="text-gray-400 text-base sm:text-lg lg:text-xl">
           Celebrating our milestones and successes
-        </motion.p>
+        </p>
       </div>
 
-      <div className="relative w-full md:w-2/3 h-[300px] flex items-center justify-center">
-        <AnimatePresence mode="wait" custom={direction}>
-          <motion.div
-            key={current}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ 
-              type: "spring", 
-              stiffness: 300, 
-              damping: 25,
-              duration: 0.5
-            }}
-            className="absolute w-56 h-56 md:w-64 md:h-64 flex items-center justify-center rounded-full border-4 border-blue-500/90 text-center text-lg md:text-xl font-semibold p-6 md:p-8 shadow-lg bg-white/95 text-gray-800 z-10"
-          >
-            <div className="px-4">
-              {achievements[current].split('\n').map((line, i) => (
-                <div key={i}>{line}</div>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Minimal Peek Circles - Left */}
-        <motion.div
-          animate={{
-            x: -80,
-            opacity: 0.2,
-            scale: 0.6
-          }}
-          transition={{ type: "spring", stiffness: 200 }}
-          className="absolute w-56 h-56 md:w-64 md:h-64 flex items-center justify-center rounded-full border border-blue-300/30 text-center p-6 md:p-8 bg-white/20 text-gray-600 z-0 text-sm md:text-base"
-        >
-          {achievements[(current - 1 + achievements.length) % achievements.length]}
-        </motion.div>
-
-        <motion.div
-          animate={{
-            x: 80,
-            opacity: 0.2,
-            scale: 0.6
-          }}
-          transition={{ type: "spring", stiffness: 200 }}
-          className="absolute w-56 h-56 md:w-64 md:h-64 flex items-center justify-center rounded-full border border-blue-300/30 text-center p-6 md:p-8 bg-white/20 text-gray-600 z-0 text-sm md:text-base"
-        >
-          {achievements[(current + 1) % achievements.length]}
-        </motion.div>
-
-        <button
-          onClick={prev}
-          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-4xl text-blue-600 z-20 hover:text-blue-800 transition-colors"
-        >
-          &lt;
-        </button>
-        <button
-          onClick={next}
-          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-4xl text-blue-600 z-20 hover:text-blue-800 transition-colors"
-        >
-          &gt;
-        </button>
+      {/* Right side - Carousel */}
+      <div className="flex-1 w-full flex items-center justify-center min-h-[500px] lg:min-h-auto">
+        {achievementItems.length > 0 ? (
+          <Carousel
+            items={achievementItems}
+            baseWidth={baseWidth}
+            autoplay={true}
+            autoplayDelay={4000}
+            pauseOnHover={true}
+            loop={true}
+            round={true}
+          />
+        ) : (
+          <div className="text-white text-center">
+            <p>No achievements to display</p>
+          </div>
+        )}
       </div>
     </div>
   );
