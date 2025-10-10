@@ -238,7 +238,7 @@ export function Team() {
   ];
 
   return (
-    <section className="min-h-screen snap-start snap-always bg-black relative overflow-hidden px-4 py-20">
+    <section className="min-h-screen snap-start snap-always bg-black relative overflow-visible z-20 px-4 py-20">
       <div className="absolute inset-0 via-black to-gray-900"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
 
