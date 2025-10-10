@@ -99,6 +99,17 @@ export function AchievementsCarousel() {
           </div>
         )}
       </div>
+
+      <div className="hidden text-white text-sm mt-10 space-y-1" id="credits">
+          <p className="font-semibold">Built by:</p>
+          <ul className="list-disc list-inside opacity-80">
+              <li>Krutarth Patel</li>
+              <li>Ethan Mathais</li>
+              <li>Parth </li>
+              <li>Manav Gangar</li>
+            </ul>
+          </div>
+
     </div>
   );
 }

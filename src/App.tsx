@@ -1,3 +1,5 @@
+// home.tsx
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/custom/navbar';
@@ -24,26 +26,16 @@ const AppContent: React.FC = () => {
           <Header />
         </div>
       )}
-      
+
       {/* Main content with scroll snap */}
-      <div className="relative z-20">
+      <div className="relative z-20 w-full">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* TODO: fix routing logic */}
           <Route path="/achievements" element={<AchievementsCarousel />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/team" element={<Team />} />
         </Routes>
       </div>
-      
-      {/* Footer blur fixed at bottom - appears on all sections */}
-      {/* <GradualBlurMemo
-        preset="page-footer"
-        target="page"
-        animated={true}
-        height='5rem'
-        divCount={9}
-      /> */}
     </>
   );
 };
