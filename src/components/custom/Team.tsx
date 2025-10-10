@@ -93,7 +93,6 @@ const teamData = {
 };
 
 export function Team() {
-  // keep tech default as before; set non-tech to a real option
   const [selectedDepartment, setSelectedDepartment] = useState("Web Development");
   const [selectedNonTech, setSelectedNonTech] = useState("Business Development");
 
@@ -122,74 +121,98 @@ export function Team() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
           </svg>
         </div>
-
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/0 via-purple-500/0 to-cyan-500/0 
-                        group-hover:from-blue-500/10 group-hover:via-purple-500/10 group-hover:to-cyan-500/10 
-                        transition-all duration-300 pointer-events-none"></div>
       </div>
     );
   };
 
   const MemberCard = ({ member, isAlumni = false }) => {
     return (
-      <div
-        className="group relative z-10 p-6 bg-gradient-to-br from-white/10 via-white/5 to-transparent 
-                   rounded-xl backdrop-blur-lg border border-white/20 hover:border-white/40
-                   shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.3)]
-                   transition-transform duration-300 ease-out transform-gpu hover:scale-105 origin-center
-                   text-white"
-        style={{ willChange: "transform", transform: "translateZ(0)" }}
-      >
-        <div className="absolute inset-0 transition-all duration-500 rounded-xl pointer-events-none"></div>
+      <div className="h-full">
+        <div
+          className="group relative h-full p-6 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-transparent 
+                     rounded-2xl backdrop-blur-md border border-blue-400/20 
+                     shadow-[0_8px_32px_rgba(59,130,246,0.1)] 
+                     transition-all duration-500 ease-out
+                     hover:shadow-[0_20px_64px_rgba(59,130,246,0.25)]
+                     hover:border-blue-400/50 hover:bg-gradient-to-br hover:from-blue-500/10 hover:via-purple-500/10 hover:to-blue-500/5
+                     text-white overflow-hidden"
+        >
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 via-transparent to-cyan-600/10"></div>
+          </div>
 
-        <div className="relative z-20">
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex-1">
-              <h3 className="text-xl font-bold mb-2 group-hover:text-blue-100 transition-colors">{member.name}</h3>
-              <p className="text-blue-300 font-medium mb-1 group-hover:text-blue-200 transition-colors">{member.position}</p>
+          {/* Content */}
+          <div className="relative z-20 h-full flex flex-col justify-between">
+            {/* Header with name and image */}
+            <div className="mb-4">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold mb-1 group-hover:text-blue-100 transition-colors duration-300">
+                    {member.name}
+                  </h3>
+                  <p className="text-blue-300 font-medium text-sm mb-2 group-hover:text-blue-200 transition-colors duration-300">
+                    {member.position}
+                  </p>
+                </div>
+
+                {member.Image ? (
+                  <div className="relative flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400/40 group-hover:border-blue-300/70 transition-all duration-500 group-hover:shadow-[0_0_24px_rgba(59,130,246,0.5)]">
+                      <img
+                        src={member.Image}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 
+                                  flex items-center justify-center flex-shrink-0 border-2 border-blue-400/40
+                                  group-hover:border-blue-300/70 group-hover:shadow-[0_0_24px_rgba(59,130,246,0.3)] transition-all duration-500">
+                    <div className="w-8 h-8 rounded-full bg-blue-400/30"></div>
+                  </div>
+                )}
+              </div>
             </div>
 
-            {member.Image ? (
-              <img
-                src={member.Image}
-                alt={member.name}
-                className="w-20 h-20 rounded-full object-cover border-2 border-white/30 
-                           group-hover:scale-110 group-hover:border-blue-300/70 transition-transform duration-300"
-              />
-            ) : (
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 
-                              flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <div className="w-10 h-10 rounded-full bg-white/20"></div>
+            {/* Info section */}
+            <div className="space-y-2 mb-4">
+              <div className="flex items-center gap-2 text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+                <span className="w-2 h-2 bg-green-400 rounded-full group-hover:shadow-[0_0_8px_rgba(74,222,128,0.6)] transition-all duration-300"></span>
+                {member.year}
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                <span className="w-2 h-2 bg-blue-400 rounded-full group-hover:shadow-[0_0_8px_rgba(59,130,246,0.6)] transition-all duration-300"></span>
+                {member.college}
+              </div>
+            </div>
+
+            {/* Skills */}
+            {member.skills && (
+              <div className="flex flex-wrap gap-2 mt-4">
+                {member.skills.slice(0, 3).map((skill, index) => (
+                  <span 
+                    key={index} 
+                    className="px-3 py-1 text-xs bg-blue-500/10 text-blue-200 rounded-full border border-blue-400/30 
+                               group-hover:bg-blue-500/20 group-hover:border-blue-400/60 transition-all duration-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Achievement */}
+            {member.achievement && (
+              <div className="mt-4 p-3 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-lg border border-yellow-500/30 
+                              group-hover:from-yellow-500/20 group-hover:to-orange-500/20 group-hover:border-yellow-500/60 transition-all duration-300">
+                <p className="text-yellow-200 text-sm font-medium group-hover:text-yellow-100 transition-colors duration-300">
+                  {member.achievement}
+                </p>
               </div>
             )}
           </div>
-
-          <div className="space-y-2 mb-4">
-            <p className="text-gray-300 text-sm flex items-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-              {member.year}
-            </p>
-            <p className="text-gray-400 text-sm flex items-center">
-              <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
-              {member.college}
-            </p>
-          </div>
-
-          {member.skills && (
-            <div className="flex flex-wrap gap-2 mt-4">
-              {member.skills.slice(0, 3).map((skill, index) => (
-                <span key={index} className="px-3 py-1 text-xs bg-white/10 text-blue-200 rounded-full border border-white/20">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {member.achievement && (
-            <div className="mt-4 p-3 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-lg border border-yellow-500/20">
-              <p className="text-yellow-200 text-sm font-medium">{member.achievement}</p>
-            </div>
-          )}
         </div>
       </div>
     );
@@ -215,7 +238,7 @@ export function Team() {
   ];
 
   return (
-    <section className="min-h-screen snap-start snap-always bg-black relative overflow-visible px-4 py-16">
+    <section className="min-h-screen snap-start snap-always bg-black relative overflow-hidden px-4 py-20">
       <div className="absolute inset-0 via-black to-gray-900"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
 
@@ -232,17 +255,16 @@ export function Team() {
         <div className="flex flex-col items-center space-y-8">
           <Tabs defaultValue="2025" className="w-full max-w-6xl">
             <TabsContent value="2025" className="w-full">
-              {/* nested tabs: default to Super-Core */}
               <Tabs defaultValue="Super-Core" className="w-full">
                 <div className="flex justify-center mb-8">
                   <TabsList className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-2">
-                    <TabsTrigger value="Super-Core" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 data-[state=active]:to-gray-600 data-[state=active]:text-white px-6 py-3 rounded-xl font-medium transition-all duration-300">
+                    <TabsTrigger value="Super-Core" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-blue-600 data-[state=active]:text-white px-6 py-3 rounded-xl font-medium transition-all duration-300">
                       Super Core
                     </TabsTrigger>
-                    <TabsTrigger value="Tech" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 data-[state=active]:to-gray-600 data-[state=active]:text-white px-6 py-3 rounded-xl font-medium transition-all duration-300">
+                    <TabsTrigger value="Tech" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-blue-600 data-[state=active]:text-white px-6 py-3 rounded-xl font-medium transition-all duration-300">
                       Technical Teams
                     </TabsTrigger>
-                    <TabsTrigger value="Non-Tech" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-gray-500 data-[state=active]:to-gray-600 data-[state=active]:text-white px-6 py-3 rounded-xl font-medium transition-all duration-300">
+                    <TabsTrigger value="Non-Tech" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-blue-600 data-[state=active]:text-white px-6 py-3 rounded-xl font-medium transition-all duration-300">
                       Operations Teams
                     </TabsTrigger>
                   </TabsList>
@@ -257,13 +279,10 @@ export function Team() {
                     </div>
                   </div>
 
-                  {/* Scrolling wrapper keeps the vertical scroll but grid allows overflow for scale */}
-                  <div className="max-h-[600px] overflow-y-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-visible p-2">
-                      {teamData[2025].Tech[selectedDepartment]?.map((member, index) => (
-                        <MemberCard key={index} member={member} />
-                      ))}
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+                    {teamData[2025].Tech[selectedDepartment]?.map((member, index) => (
+                      <MemberCard key={index} member={member} />
+                    ))}
                   </div>
                 </TabsContent>
 
@@ -276,12 +295,10 @@ export function Team() {
                     </div>
                   </div>
 
-                  <div className="max-h-[600px] overflow-y-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-visible p-2">
-                      {teamData[2025].NonTech[selectedNonTech]?.map((member, index) => (
-                        <MemberCard key={index} member={member} />
-                      ))}
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+                    {teamData[2025].NonTech[selectedNonTech]?.map((member, index) => (
+                      <MemberCard key={index} member={member} />
+                    ))}
                   </div>
                 </TabsContent>
 
@@ -291,12 +308,10 @@ export function Team() {
                     <h3 className="text-2xl font-semibold text-white mb-6">Super Core</h3>
                   </div>
 
-                  <div className="max-h-[600px] overflow-y-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-visible p-2">
-                      {teamData[2025].SuperCore?.map((member, index) => (
-                        <MemberCard key={index} member={member} />
-                      ))}
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+                    {teamData[2025].SuperCore?.map((member, index) => (
+                      <MemberCard key={index} member={member} />
+                    ))}
                   </div>
                 </TabsContent>
               </Tabs>
@@ -311,12 +326,10 @@ export function Team() {
                 </p>
               </div>
 
-              <div className="max-h-[600px] overflow-y-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-visible p-2">
-                  {teamData[2024].map((member, index) => (
-                    <MemberCard key={index} member={member} isAlumni={true} />
-                  ))}
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+                {teamData[2024].map((member, index) => (
+                  <MemberCard key={index} member={member} isAlumni={true} />
+                ))}
               </div>
             </TabsContent>
           </Tabs>
